@@ -13,7 +13,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    // Create a block and provide it to the HomeView
     return const HomeView();
   }
 }
@@ -23,7 +22,6 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Create the HomeView UI
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,
