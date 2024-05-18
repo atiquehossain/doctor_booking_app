@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_bloc: ^8.1.5
   flutter_launcher_icons: ^0.13.1
+  models:
+    path: packages/models
 
 dev_dependencies:
   flutter_test:
