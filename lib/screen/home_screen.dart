@@ -1,7 +1,6 @@
 import 'package:doctor_booking_app/widget/section_title.dart';
 import 'package:flutter/material.dart';
 import 'package:models/models.dart';
-
 import '../widget/circle_avatar_with_text_label.dart';
 import '../widget/text_widget.dart';
 
@@ -94,6 +93,7 @@ class HomeView extends StatelessWidget {
         child: Column(
           children: [
             _DoctorCategories(),
+            _MySchedule(),
           ],
         ),
       ),
@@ -129,4 +129,14 @@ class _DoctorCategories extends StatelessWidget {
     );
   }
 }
+
+class _MySchedule extends StatelessWidget {
+  const _MySchedule({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
+
 
