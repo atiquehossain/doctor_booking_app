@@ -1,6 +1,7 @@
 import 'package:doctor_booking_app/widget/section_title.dart';
 import 'package:flutter/material.dart';
 import 'package:models/models.dart';
+import '../widget/cards/appointment_preview_card.dart';
 import '../widget/circle_avatar_with_text_label.dart';
 import '../widget/text_widget.dart';
 
@@ -93,7 +94,10 @@ class HomeView extends StatelessWidget {
         child: Column(
           children: [
             _DoctorCategories(),
+            SizedBox(height: 16,),
             _MySchedule(),
+            SizedBox(height: 16,),
+            _NearbyDoctors()
           ],
         ),
       ),
@@ -135,8 +139,29 @@ class _MySchedule extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      children: [
+        SectionTitle(title: 'Categories',action: 'See all',onPressed: (){},),
+        AppointmentPreviewCard(),
+      ],
+    );
+
   }
 }
+
+class _NearbyDoctors extends StatelessWidget {
+  const _NearbyDoctors({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SectionTitle(title: 'Nearby Doctors',action: 'See all',onPressed: (){},),
+
+      ],
+    );
+  }
+}
+
 
 
