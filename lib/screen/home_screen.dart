@@ -1,6 +1,8 @@
 import 'package:doctor_booking_app/widget/section_title.dart';
 import 'package:flutter/material.dart';
+import 'package:models/models.dart';
 
+import '../widget/circle_avatar_with_text_label.dart';
 import '../widget/text_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -13,7 +15,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    // Create a block and provide it to the HomeView
     return const HomeView();
   }
 }
@@ -23,7 +24,6 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Create the HomeView UI
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,
@@ -108,7 +108,23 @@ class _DoctorCategories extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SectionTitle(title: 'Categories',action: 'See all',onPressed: (){},)
+        SectionTitle(title: 'Categories',action: 'See all',onPressed: (){},),
+
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: DoctorCategories.values
+          .take(5)
+              .map(
+                  (category) => Expanded(
+                    child: CircleAvatarWithTextLabel(
+                        icon: category.icon,
+                        label : category.name
+                    
+                    ),
+                  ),
+          ).toList()
+        ),
+
       ],
     );
   }
